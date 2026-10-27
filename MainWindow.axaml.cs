@@ -101,7 +101,17 @@ public partial class MainWindow : Window
         }
 
         File.WriteAllText(NotesFilePath, sb.ToString(), new UTF8Encoding(encoderShouldEmitUTF8Identifier: false));
+    try
+{
+    File.WriteAllText(path, content);
+    StatusText.Text = "Zapisano";
+}
+catch (Exception ex)
+{
+    StatusText.Text = $"Nie udało się zapisać: {ex.Message}";
+}
     }
+
 
     /// <summary>
     /// Wczytuje notatki z pliku notatki.md.

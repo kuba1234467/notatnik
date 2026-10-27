@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("notatnik")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0a3663caf5222abe86fca33f101da627d0d1fcbb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6823855b21729b4371f89a245b55401794725561")]
 [assembly: System.Reflection.AssemblyProductAttribute("notatnik")]
 [assembly: System.Reflection.AssemblyTitleAttribute("notatnik")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

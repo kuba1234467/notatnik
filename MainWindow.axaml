@@ -31,6 +31,7 @@
                     HorizontalContentAlignment="Center"
                     Classes="accent"
                     Click="OnSaveClick"/>
+                    <TextBlock Name="StatusText" />
 
             <TextBlock x:Name="StatusText"
                        FontSize="12"
