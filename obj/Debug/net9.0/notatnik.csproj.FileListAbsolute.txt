@@ -89,3 +89,4 @@ C:\Users\Jakub Morawski\notatnik\obj\Debug\net9.0\refint\notatnik.dll
 C:\Users\Jakub Morawski\notatnik\obj\Debug\net9.0\notatnik.pdb
 C:\Users\Jakub Morawski\notatnik\obj\Debug\net9.0\notatnik.genruntimeconfig.cache
 C:\Users\Jakub Morawski\notatnik\obj\Debug\net9.0\ref\notatnik.dll
+C:\Users\Jakub Morawski\notatnik\obj\Debug\net9.0\notatnik.sourcelink.json

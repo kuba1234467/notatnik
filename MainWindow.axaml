@@ -2,8 +2,65 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        xmlns:local="clr-namespace:notatnik"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="550"
         x:Class="notatnik.MainWindow"
-        Title="notatnik">
-    Welcome to Avalonia!
+        Title="Notatnik"
+        Width="800" Height="550"
+        MinWidth="600" MinHeight="400">
+
+    <Grid ColumnDefinitions="*,300" Margin="16">
+
+        <!-- Lewa strona: formularz -->
+        <StackPanel Grid.Column="0" Margin="0,0,16,0" Spacing="12">
+            <TextBlock Text="Nowa notatka" FontSize="20" FontWeight="Bold"/>
+
+            <TextBlock Text="Tytuł:" FontWeight="SemiBold"/>
+            <TextBox x:Name="TitleBox" PlaceholderText="Wpisz tytuł notatki..."/>
+
+            <TextBlock Text="Treść:" FontWeight="SemiBold"/>
+            <TextBox x:Name="ContentBox"
+                     PlaceholderText="Wpisz treść notatki..."
+                     AcceptsReturn="True"
+                     TextWrapping="Wrap"
+                     Height="200"/>
+
+            <Button x:Name="SaveButton"
+                    Content="💾  Zapisz notatkę"
+                    HorizontalAlignment="Stretch"
+                    HorizontalContentAlignment="Center"
+                    Classes="accent"
+                    Click="OnSaveClick"/>
+
+            <TextBlock x:Name="StatusText"
+                       FontSize="12"
+                       Foreground="Gray"
+                       HorizontalAlignment="Center"/>
+        </StackPanel>
+
+        <!-- Prawa strona: lista notatek -->
+        <Border Grid.Column="1"
+                BorderBrush="Gray" BorderThickness="1"
+                CornerRadius="8" Padding="12">
+            <DockPanel>
+                <TextBlock DockPanel.Dock="Top"
+                           Text="📋 Zapisane notatki"
+                           FontSize="16" FontWeight="Bold"
+                           Margin="0,0,0,8"/>
+
+                <ListBox x:Name="NotesList"
+                         SelectionChanged="OnNoteSelected">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate x:DataType="local:Note">
+                            <StackPanel Spacing="2">
+                                <TextBlock Text="{Binding Title}" FontWeight="SemiBold"/>
+                                <TextBlock Text="{Binding DateDisplay}" FontSize="11" Foreground="Gray"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </DockPanel>
+        </Border>
+
+    </Grid>
 </Window>
